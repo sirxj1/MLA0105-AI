@@ -1,0 +1,35 @@
+can_fly(sparrow).
+can_fly(eagle).
+
+query_can_fly(Bird) :-
+    can_fly(Bird),
+    write(Bird), write(' can fly.'),
+    nl.
+query_can_fly(Bird) :-
+    \+ can_fly(Bird),
+    write(Bird), write(' cannot fly.'),
+    nl.
+
+
+
+
+
+
+####
+?- query_can_fly(sparrow).
+sparrow can fly.
+true .
+
+?- query_can_fly(penguin).
+penguin cannot fly.
+true.
+
+?- query_can_fly(eagle).
+eagle can fly.
+true .
+
+?- query_can_fly(crow).
+crow cannot fly.
+true.
+
+?- 

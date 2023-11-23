@@ -1,0 +1,42 @@
+fruit_color(apple, red).
+fruit_color(banana, yellow).
+fruit_color(orange, orange).
+fruit_color(grape, purple).
+fruit_color(strawberry, red).
+fruit_color(blueberry, blue).
+fruit_color(pear, green).
+fruit_color(watermelon, green).
+
+fruit_of_color(Color, Fruit) :-
+    fruit_color(Fruit, Color).
+
+
+
+####
+
+?- fruit_color(Fruit, Color).
+Fruit = apple,
+Color = red ;
+Fruit = banana,
+Color = yellow ;
+Fruit = Color, Color = orange ;
+Fruit = grape,
+Color = purple ;
+Fruit = strawberry,
+Color = red ;
+Fruit = blueberry,
+Color = blue ;
+Fruit = pear,
+Color = green ;
+Fruit = watermelon,
+Color = green.
+
+?- fruit_of_color(red, Fruit).
+Fruit = apple ;
+Fruit = strawberry.
+
+?- fruit_of_color(green, Fruit).
+Fruit = pear ;
+Fruit = watermelon.
+
+?- 

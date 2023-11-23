@@ -1,0 +1,29 @@
+:- discontiguous likes/2.
+
+likes(ram, mango).
+likes(bill, cindy).
+
+isGirl(seema).
+
+isColor(rose, red).
+
+owns(john, gold).
+
+
+
+
+#####
+?- likes(ram, mango).
+true.
+
+?- isGirl(seema).
+true.
+
+?- likes(bill, cindy).
+true.
+
+?- isColor(rose, red).
+true.
+
+?- owns(john, gold).
+true.

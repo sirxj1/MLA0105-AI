@@ -1,0 +1,16 @@
+sum_up_to_n(0, 0).
+
+
+sum_up_to_n(N, Sum) :-
+    N > 0,
+    Prev is N - 1,
+    sum_up_to_n(Prev, PrevSum),
+    Sum is N + PrevSum.
+
+
+
+
+
+####
+sum_up_to_n(5, Sum).
+Sum = 15

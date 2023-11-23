@@ -1,0 +1,42 @@
+
+male(john).
+male(bob).
+male(bill).
+
+female(marry).
+female(sue).
+
+parent(john, bob).
+parent(marry, bob).
+parent(bob, sue).
+
+father(X, Y) :- male(X), parent(X, Y).
+mother(X, Y) :- female(X), parent(X, Y).
+
+sibling(X, Y) :- parent(Z, X), parent(Z, Y), X \= Y.
+
+grandparent(X, Y) :- parent(X, Z), parent(Z, Y).
+
+grandfather(X, Y) :- male(X), grandparent(X, Y).
+grandmother(X, Y) :- female(X), grandparent(X, Y).
+
+uncle(X, Y) :- male(X), sibling(X, Z), parent(Z, Y).
+
+
+
+
+
+###
+?- father(X, bob), write('a. Father: '), write(X), nl. 
+a. Father: john
+X = john .
+
+
+?- mother(marry, X), write('d. Mother: '), write(X), nl.
+d. Mother: bob
+X = bob.
+
+
+ uncle(bill, sue), write('c. Uncle: bill is an uncle of sue'), nl.
+false.
+
